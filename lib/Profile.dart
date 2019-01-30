@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
             Column(
               children: <Widget>[
                 Container(
-                  height: 200.0,
+                  height: 200.01,
                   width:400,
                   
                   child: Center(

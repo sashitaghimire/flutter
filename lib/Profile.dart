@@ -14,23 +14,42 @@ import 'package:flutter/material.dart';
                 Container(
                   height: 200.01,
                   width:400,
+                  decoration:BoxDecoration(
+                  image:DecorationImage(
                   
-                  child: Center(
-                    child: Image.asset("assets/profile_back.jpg"),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    color: Colors.white,
-                    child: Center(
-                      child: Text
-                      ('Sashita Ghimire',style:TextStyle(fontSize:40)),
-                      
-                    ),
-                  ),
+                  image:AssetImage("assets/profile_back.jpg"),
+
+                 fit:BoxFit.fill),
+                 boxShadow:<BoxShadow>[
+                  BoxShadow(
+                   color:Colors.blueGrey[300],
+                   offset:Offset(4.0,15.0),
+                   blurRadius:10.0
+                   ),
+                 ]
+                 
+                  
                 )
-              ],
+                
+                ),
+                SizedBox(height:12.0,),
+                Container(
+               height:345,
+               decoration:BoxDecoration(
+                 color:Colors.blueGrey,                
+
+               ),
+               
+             child: Center(child: Text("Sashita Ghimire",style:TextStyle(fontSize:40),),
+             
+             ),
+                ),
+              ]
             ),
+        
+        
+        
+            
             // Profile image
             Positioned(
               top: 150.0, 
@@ -39,14 +58,30 @@ import 'package:flutter/material.dart';
               child: Container(
                 height: 100.0,
                 width: 100.0,
+               
+                
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(image:AssetImage("assets/sashi.jpg"),)
+                  borderRadius:BorderRadius.circular(50.0),
+                  border:Border.all(
+                    width: 2.0,
+                    color: Colors.white,
+                  ),
+                  image: DecorationImage(image:AssetImage("assets/sashi.jpg"),),
+                  boxShadow:<BoxShadow>[
+                   BoxShadow(
+                   color:Colors.blueGrey[100],
+                   offset:Offset(1.0,5.0),
+                   blurRadius:30.0
+                   ),
+                 ]
                 ),
-              ),
+              
+            ),
             )
-          ],
+        ]
         ),
       );
+      
+      
     }
   }

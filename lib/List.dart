@@ -1,49 +1,68 @@
 import 'package:flutter/material.dart';
 
-class ListPage extends StatefulWidget{
-  @override
-  State<ListPage> createState() {
-    return new ListState();
-  }
-}
-
-class ListState extends State<ListPage>{
-  List<String> Names = [
-    'Sashita','Ishwor','Robert','Shyam',
-  ];
+class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: new Text("List of Users "),
+        title: Text("List of Users"),
+         backgroundColor:(Colors.blueGrey),
       ),
-      body: new Container(
-        child: new ListView.builder(
-          
-            itemBuilder: (_,int index)=>EachList(this.Names[index]),
-            itemCount: this.Names.length,
-        ),
-      ),
-    );
-  }
-}
-class EachList extends StatelessWidget{
-  final String name;
-  EachList(this.name);
-  @override
-  Widget build(BuildContext context) {
-    return new Card(
-      child: new Container(
-        padding: EdgeInsets.all(8.0),
-        child: new Row(
-          children: <Widget>[
-            new CircleAvatar(backgroundImage:AssetImage("assets/avatar.png"),radius:30,),
-            new Padding(padding: EdgeInsets.only(right: 10.0)),
-            new Text(name,style: TextStyle(fontSize: 20.0),)
-          ],
-        ),
-      ),
-    );
-  }
+      body: Container(
 
+          child: _list1(context),
+
+        // child: ListView.builder(
+        //   itemBuilder: (_,int index)=>Eachlist(),
+        //   itemCount: 5,
+        // ),
+        
+
+      )
+    );
+  }
 }
+// class Eachlist extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       child: Container(
+//         padding: EdgeInsets.all(10),
+//         child: Row(
+//           children: <Widget>[
+//             CircleAvatar( backgroundImage: AssetImage("assets/ishwor.jpg"),radius: ,),
+//             Padding(padding: EdgeInsets.only(right: 10.0),),
+//             Text("Ishwor",style: TextStyle(fontSize: 20.0),)
+
+//           ],
+//         ),
+//       )
+
+      
+//     );
+//   }
+// }
+
+  
+  Widget _list1(BuildContext context) {
+    return Container(
+      child: ListView(
+        padding: EdgeInsets.all(20),
+        itemExtent: 100,
+        children: <Widget>[
+          ListTile(
+            leading: CircleAvatar(backgroundImage: AssetImage("assets/avatar.png"),),
+            title: Text("Sashita",style: TextStyle(fontSize: 20),), 
+          ),
+           ListTile(
+            leading: CircleAvatar(backgroundImage: AssetImage("assets/img1.jpg"),),
+            title: Text("Ishwor",style: TextStyle(fontSize: 20),),
+          ),
+           ListTile(
+            leading: CircleAvatar(backgroundImage: AssetImage("assets/img2.png"),),
+            title: Text("Satyam",style: TextStyle(fontSize: 20),),
+          ),
+        ],
+      ),
+    );
+  }
